@@ -3,6 +3,21 @@
   src: url("./assets/fonts/Ubuntu-Regular.ttf");
 }
 
+.badge {
+  align-items: center;
+  max-width: 150px;
+}
+
+.badge p {
+text-align: center;
+}
+
+.badge img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
 :root {
   /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
   font-family: "Ubuntu", system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -71,5 +86,20 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@keyframes coin-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .currency-loading {
+    animation: coin-spin infinite 2s linear;
   }
 }

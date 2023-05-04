@@ -1,33 +1,27 @@
 import axios from 'axios';
+import { API_KEY } from './API.config.js';
 
-const myAxios = axios.create({
-  // baseURL: "https://sandbox-api.coinmarketcap.com/",
-  headers: {"X-CMC_PRO_API_KEY": "b54bcf4d-1bca-4e8e-9a24-22ff2c3d462c"}
-});
+const myAxios = axios.create();
+// export const COIN_MAP = getCoinMap();
 
-export default function testAxios() {
-let response = null;
-new Promise(async (resolve, reject) => {
+export async function getCoinMap() {
   try {
-    response = await axios.get('/api/v1/cryptocurrency/listings/latest', {
-      headers: {
-        'X-CMC_PRO_API_KEY': 'b54bcf4d-1bca-4e8e-9a24-22ff2c3d462c',
-      },
-    });
-  } catch(ex) {
-    response = null;
-    // error
-    console.log(ex);
-    reject(ex);
+    const promise = await axios.get("/api/v1/cryptocurrency/map", {headers: {"X-CMC_PRO_API_KEY": API_KEY}});
+    return promise.data;
+  } catch (error) {
+    console.error(error);
+    return {};
   }
-  if (response) {
-    // success
-    const json = response.data;
-    console.log(json);
-    resolve(json);
-  }
-});
+}
 
+export async function getLatestMarketInfo() {
+  try {
+    const response = await axios.get('/api/v1/cryptocurrency/listings/latest', {headers: {"X-CMC_PRO_API_KEY": API_KEY}});
+    // response.data.data.forEach(item => console.log(`${item.name} (${item.symbol}) ID: ${item.id}`));
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 // export default function testAxios() {

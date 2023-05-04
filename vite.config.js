@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import { API_DOMAIN } from './src/API.config.js'
 import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
@@ -7,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://sandbox-api.coinmarketcap.com/",
+        target: API_DOMAIN,
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, ''),
