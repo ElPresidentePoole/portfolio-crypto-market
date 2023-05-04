@@ -17,7 +17,7 @@ export default function Badge({ coinMap, coinListings, currencyName, currencyIco
 
   return (<div className="badge">
             <p>{currencyName}</p>
-            <img src={currencyIcon}/>
+            <img className="currency-loading" src={currencyIcon}/>
     <p>1 {currencySymbol} &#x2248; {usdEquivilent} USD</p>
     </div>);
   }
