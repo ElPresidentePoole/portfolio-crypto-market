@@ -2,8 +2,10 @@ import NavigationBar from './NavigationBar.jsx';
 import Badge from './Badge.jsx';
 import { getCoinMap, getLatestMarketInfo } from './API.js';
 import { useState, useEffect } from 'react';
-import ethImg from './assets/eth-diamond-purple.png';
-import btcImg from './assets/bitcoin.png';
+import ethImg from './assets/ethereum.svg';
+import btcImg from './assets/bitcoin.svg';
+import xmrImg from './assets/monero.svg';
+import xrpImg from './assets/xrp.svg';
 
 export default function LandingPage() {
   const [ coinMap, setCoinMap ] = useState({});
@@ -33,12 +35,34 @@ export default function LandingPage() {
   }, []);
 
     return (
-      <div>
+      <div className="container-fluid text-center">
         <NavigationBar />
-        <h1>A new world awaits</h1>
-        <p>See the latest in crypto, and make your mark.</p>
-        <Badge coinMap={coinMap} coinListings={coinListings} currencyName="Ethereum" currencyIcon={ethImg} />
-        <Badge coinMap={coinMap} coinListings={coinListings} currencyName="Bitcoin" currencyIcon={btcImg} />
+        <div className="row">
+          <div className="col">
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col">
+                  <Badge coinMap={coinMap} coinListings={coinListings} currencyName="Ethereum" currencyIcon={ethImg} />
+                </div>
+                <div className="col">
+                  <Badge coinMap={coinMap} coinListings={coinListings} currencyName="Bitcoin" currencyIcon={btcImg} />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col">
+                  <Badge coinMap={coinMap} coinListings={coinListings} currencyName="Monero" currencyIcon={xmrImg} />
+                </div>
+                <div className="col">
+                  <Badge coinMap={coinMap} coinListings={coinListings} currencyName="XRP" currencyIcon={xrpImg} />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <h1>A new world awaits</h1>
+            <p>See the latest in crypto, and make your mark.</p>
+          </div>
+        </div>
       </div>
     )
 }

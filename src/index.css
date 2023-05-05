@@ -1,10 +1,14 @@
+:root {
+  font-family: "Ubuntu", system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
 @font-face {
   font-family: "Ubuntu";
   src: url("./assets/fonts/Ubuntu-Regular.ttf");
 }
 
 .badge {
-  align-items: center;
+justify-content: center;
   max-width: 150px;
 }
 
@@ -13,13 +17,50 @@ text-align: center;
 }
 
 .badge img {
-  max-height: 100%;
-  max-width: 100%;
+  max-height: 50%;
+  max-width: 50%;
   object-fit: contain;
 }
+@keyframes bobbing {
+  0% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .coin-image {
+    animation: bobbing infinite 5s ease-in-out;
+    animation-direction: alternate;
+  }
+}
+
+.badge-grid {
+display: grid;
+grid-template-columns: 20% 20%;
+justify-content: space-evenly;
+}
+
+.flexbox-container {
+display: flex;
+}
+
+.landing-pitch {
+text-align: center;
+}
+
+.flexbox-container > div {
+flex: 50%;
+}
+
+/*
 
 :root {
-  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
   font-family: "Ubuntu", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -89,18 +130,4 @@ button:focus-visible {
   }
 }
 
-@keyframes coin-spin {
-  0% {
-    transform: translateY(-8px);
-  }
-  100% {
-    transform: translateY(8px);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .currency-loading {
-    animation: coin-spin infinite 2s ease-in-out;
-    animation-direction: alternate;
-  }
-}
+ */
