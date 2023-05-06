@@ -17,7 +17,7 @@ export default function LandingPage() {
         const data = await getCoinMap();
         setCoinMap(data);
       } catch (e) {
-        console.error("Couldn't fetch coin map from api call!")
+        console.error("Couldn't fetch coin map from api call!");
       }
     }
 
@@ -26,7 +26,7 @@ export default function LandingPage() {
         const data = await getLatestMarketInfo();
         setCoinListings(data);
       } catch (e) {
-        console.error("Couldn't fetch coin listings from api call!")
+        console.error("Couldn't fetch coin listings from api call!");
       }
     }
 
@@ -38,8 +38,8 @@ export default function LandingPage() {
       <div className="container-fluid text-center">
         <NavigationBar />
         <div className="row">
-          <div className="col">
-            <div className="container-fluid">
+          <div className="col-5">
+            <div className="container">
               <div className="row">
                 <div className="col">
                   <Badge coinMap={coinMap} coinListings={coinListings} currencyName="Ethereum" currencyIcon={ethImg} />
@@ -58,7 +58,7 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
-          <div className="col">
+          <div className="col-7">
             <h1>A new world awaits</h1>
             <p>See the latest in crypto, and make your mark.</p>
           </div>

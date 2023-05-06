@@ -2,7 +2,7 @@
 // bg-dark class
 export default function NavigationBar() {
   return (<nav className="navbar aria-label='page'">
-            <div className="container-fluid justify-content-center">
+            <div className="container-fluid justify-content-start">
               <a className="navbar-brand" href="#">💰 real crypto site</a>
             (<a href="./index.html">Home</a>)
             (<a href="./prices.html">Latest Prices</a>)
