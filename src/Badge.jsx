@@ -4,7 +4,7 @@ import { simplifyValue, isObjectEmpty } from './Utility.js';
 export default function Badge({ coinMap, coinListings, currencyName, currencyIcon }) {
   if (isObjectEmpty(coinMap) || isObjectEmpty(coinListings)) {
     // loading stub
-    return (<div>
+    return (<div className="m-5">
                 <p>Fetching...</p>
               <div className="ratio ratio-1x1">
                 <img className="img-fluid coin-image" src={currencyIcon}/>
