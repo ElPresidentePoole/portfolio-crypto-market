@@ -38,8 +38,8 @@ export default function LandingPage() {
       <div className="container-fluid text-center">
         <NavigationBar />
         <div className="row">
-          <div className="col-5">
-            <div className="container d-sm-none d-md-block">
+          <div className="col-sm-3 d-none d-sm-block">
+            <div className="container">
               <div className="row">
                 <div className="col">
                   <Badge coinMap={coinMap} coinListings={coinListings} currencyName="Ethereum" currencyIcon={ethImg} />
@@ -58,7 +58,7 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
-          <div className="d-table col-7 justify-content-center">
+          <div className="d-table col justify-content-center">
             <h1>A new world awaits</h1>
             <p>See the latest in crypto, and make your mark.</p>
             <p>
